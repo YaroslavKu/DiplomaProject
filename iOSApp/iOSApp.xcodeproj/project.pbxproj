@@ -55,6 +55,7 @@
 		3800DF212789C80500EE5C5B /* iOSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3800DF252789C80500EE5C5B /* iOSAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAppUITests.swift; sourceTree = "<group>"; };
 		3800DF272789C80500EE5C5B /* iOSAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3800DF342789CC0C00EE5C5B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		624A0EE58E79622A53429146 /* Pods_iOSAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B7323E127F90C4257D7EB7 /* Pods_iOSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0C4BD22BA93478EAF79231 /* Pods-iOSApp-iOSAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp-iOSAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSApp-iOSAppUITests/Pods-iOSApp-iOSAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		3800DEF82789C80200EE5C5B = {
 			isa = PBXGroup;
 			children = (
+				3800DF342789CC0C00EE5C5B /* README.md */,
 				3800DF032789C80300EE5C5B /* iOSApp */,
 				3800DF1A2789C80500EE5C5B /* iOSAppTests */,
 				3800DF242789C80500EE5C5B /* iOSAppUITests */,
@@ -164,7 +166,6 @@
 				010EFB47157E0B893242690F /* Pods-iOSAppTests.debug.xcconfig */,
 				00AA1430FB83FC3D4ECBB0BD /* Pods-iOSAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
