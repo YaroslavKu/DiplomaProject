@@ -132,15 +132,13 @@
 		3800DF032789C80300EE5C5B /* iOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				3863F421278C88EB0096AA2D /* Source */,
 				3800DF042789C80300EE5C5B /* AppDelegate.swift */,
 				3800DF062789C80300EE5C5B /* SceneDelegate.swift */,
 				3800DF0A2789C80300EE5C5B /* Main.storyboard */,
-				3800DF0D2789C80400EE5C5B /* Assets.xcassets */,
 				3800DF0F2789C80400EE5C5B /* LaunchScreen.storyboard */,
+				3800DF0D2789C80400EE5C5B /* Assets.xcassets */,
 				3800DF122789C80400EE5C5B /* Info.plist */,
-				380CC899278A613B0092CE23 /* Home.storyboard */,
-				380CC89B278A61D10092CE23 /* Settings.storyboard */,
-				3863F41F278C871F0096AA2D /* Statistic.storyboard */,
 			);
 			path = iOSApp;
 			sourceTree = "<group>";
@@ -160,6 +158,40 @@
 				3800DF272789C80500EE5C5B /* iOSAppUITestsLaunchTests.swift */,
 			);
 			path = iOSAppUITests;
+			sourceTree = "<group>";
+		};
+		3863F421278C88EB0096AA2D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3863F422278C890B0096AA2D /* Home */,
+				3863F425278C89420096AA2D /* Statistic */,
+				3863F424278C89350096AA2D /* Settings */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3863F422278C890B0096AA2D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				380CC899278A613B0092CE23 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3863F424278C89350096AA2D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				380CC89B278A61D10092CE23 /* Settings.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3863F425278C89420096AA2D /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				3863F41F278C871F0096AA2D /* Statistic.storyboard */,
+			);
+			path = Statistic;
 			sourceTree = "<group>";
 		};
 		AAD7873BC4D74DC525E294C5 /* Pods */ = {
