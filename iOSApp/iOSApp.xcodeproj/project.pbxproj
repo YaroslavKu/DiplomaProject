@@ -18,6 +18,7 @@
 		3800DF282789C80500EE5C5B /* iOSAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800DF272789C80500EE5C5B /* iOSAppUITestsLaunchTests.swift */; };
 		380CC89A278A613B0092CE23 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380CC899278A613B0092CE23 /* Home.storyboard */; };
 		380CC89C278A61D10092CE23 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380CC89B278A61D10092CE23 /* Settings.storyboard */; };
+		3863F420278C871F0096AA2D /* Statistic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3863F41F278C871F0096AA2D /* Statistic.storyboard */; };
 		B65C969FB08891527E1B00B0 /* Pods_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B7323E127F90C4257D7EB7 /* Pods_iOSApp.framework */; };
 		E905C7190BCE12FB19388BD0 /* Pods_iOSAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624A0EE58E79622A53429146 /* Pods_iOSAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		3800DF342789CC0C00EE5C5B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		380CC899278A613B0092CE23 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		380CC89B278A61D10092CE23 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		3863F41F278C871F0096AA2D /* Statistic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistic.storyboard; sourceTree = "<group>"; };
 		624A0EE58E79622A53429146 /* Pods_iOSAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B7323E127F90C4257D7EB7 /* Pods_iOSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0C4BD22BA93478EAF79231 /* Pods-iOSApp-iOSAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSApp-iOSAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSApp-iOSAppUITests/Pods-iOSApp-iOSAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				3800DF122789C80400EE5C5B /* Info.plist */,
 				380CC899278A613B0092CE23 /* Home.storyboard */,
 				380CC89B278A61D10092CE23 /* Settings.storyboard */,
+				3863F41F278C871F0096AA2D /* Statistic.storyboard */,
 			);
 			path = iOSApp;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3800DF112789C80400EE5C5B /* LaunchScreen.storyboard in Resources */,
+				3863F420278C871F0096AA2D /* Statistic.storyboard in Resources */,
 				3800DF0E2789C80400EE5C5B /* Assets.xcassets in Resources */,
 				3800DF0C2789C80300EE5C5B /* Main.storyboard in Resources */,
 				380CC89A278A613B0092CE23 /* Home.storyboard in Resources */,
