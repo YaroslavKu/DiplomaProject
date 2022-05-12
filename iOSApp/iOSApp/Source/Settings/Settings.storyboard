@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Settinngs View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SettingsView" id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsView" id="Y6W-OH-hqX" customClass="SettinngsViewController" customModule="iOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,11 +22,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qm6-uc-Wl0">
+                                <rect key="frame" x="161.5" y="801" width="91" height="41"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logoutAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9Xs-Ox-43P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6ki-gA-u3S" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="3jV-60-JAB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Qm6-uc-Wl0" secondAttribute="bottom" constant="20" id="Aws-b7-glD"/>
+                            <constraint firstItem="Qm6-uc-Wl0" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="lEy-Yp-AHj"/>
                             <constraint firstItem="6ki-gA-u3S" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="siS-9I-I3w"/>
                         </constraints>
                     </view>
