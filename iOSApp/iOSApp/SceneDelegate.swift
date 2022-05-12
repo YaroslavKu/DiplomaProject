@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-    // MARK: Helpers
+    // MARK: Navigation
     func showModalAuth() {
         let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
         let authVC = storyboard.instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
