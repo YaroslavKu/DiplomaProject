@@ -20,6 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user == nil {
                 self.showModalAuth()
+            } else {
+                print("\(String(describing: UserData.shared.userUid))")
             }
         }
     }

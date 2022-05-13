@@ -16,36 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ki-gA-u3S">
-                                <rect key="frame" x="143.5" y="431.5" width="127.5" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qm6-uc-Wl0">
-                                <rect key="frame" x="161.5" y="801" width="91" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUS-5u-hjR">
+                                <rect key="frame" x="0.0" y="805" width="414" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="RIL-4K-iph"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="8" height="8"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logoutAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9Xs-Ox-43P"/>
+                                    <action selector="logoutAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Uii-Vb-yjz"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NgL-xf-iC7">
+                                <rect key="frame" x="20" y="44" width="374" height="128"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6ki-gA-u3S" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="3jV-60-JAB"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Qm6-uc-Wl0" secondAttribute="bottom" constant="20" id="Aws-b7-glD"/>
-                            <constraint firstItem="Qm6-uc-Wl0" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="lEy-Yp-AHj"/>
-                            <constraint firstItem="6ki-gA-u3S" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="siS-9I-I3w"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NgL-xf-iC7" secondAttribute="trailing" constant="20" id="6RJ-Xb-1GM"/>
+                            <constraint firstItem="fUS-5u-hjR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="C3B-1j-SkP"/>
+                            <constraint firstItem="fUS-5u-hjR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NgL-xf-iC7" secondAttribute="bottom" constant="50" id="DIL-tg-Du8"/>
+                            <constraint firstItem="fUS-5u-hjR" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="RHt-3W-sfh"/>
+                            <constraint firstItem="NgL-xf-iC7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Y3T-AB-mDU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fUS-5u-hjR" secondAttribute="bottom" constant="5" id="ekF-YR-wfz"/>
+                            <constraint firstItem="NgL-xf-iC7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="pr4-a6-TEf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="settingsStackView" destination="NgL-xf-iC7" id="1a2-ha-SxX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="110"/>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </scene>
     </scenes>
     <resources>

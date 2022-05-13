@@ -21,6 +21,8 @@
 		3863F420278C871F0096AA2D /* Statistic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3863F41F278C871F0096AA2D /* Statistic.storyboard */; };
 		3872EBD8282D4E8F000C6F80 /* SettinngsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBD7282D4E8F000C6F80 /* SettinngsViewController.swift */; };
 		3872EBDA282D583B000C6F80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */; };
+		3872EBE0282DAEDD000C6F80 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBDF282DAEDD000C6F80 /* UserData.swift */; };
+		3872EBE3282E63FC000C6F80 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBE2282E63FC000C6F80 /* UIColor+Extension.swift */; };
 		38E2989227E8C61400F07E49 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E2989127E8C61400F07E49 /* Authentication.storyboard */; };
 		38E2989427E8CC5A00F07E49 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2989327E8CC5A00F07E49 /* AuthViewController.swift */; };
 		B65C969FB08891527E1B00B0 /* Pods_iOSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B7323E127F90C4257D7EB7 /* Pods_iOSApp.framework */; };
@@ -66,6 +68,8 @@
 		3863F41F278C871F0096AA2D /* Statistic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistic.storyboard; sourceTree = "<group>"; };
 		3872EBD7282D4E8F000C6F80 /* SettinngsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettinngsViewController.swift; sourceTree = "<group>"; };
 		3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3872EBDF282DAEDD000C6F80 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		3872EBE2282E63FC000C6F80 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		38E2989127E8C61400F07E49 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		38E2989327E8CC5A00F07E49 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		624A0EE58E79622A53429146 /* Pods_iOSAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,10 +176,8 @@
 		3863F421278C88EB0096AA2D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				3892E27A27E8C55B0078A6AB /* Authentication */,
-				3863F422278C890B0096AA2D /* Home */,
-				3863F425278C89420096AA2D /* Statistic */,
-				3863F424278C89350096AA2D /* Settings */,
+				3872EBDE282DAEB0000C6F80 /* Core */,
+				3872EBDD282DAE93000C6F80 /* Screens */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -203,6 +205,34 @@
 				3863F41F278C871F0096AA2D /* Statistic.storyboard */,
 			);
 			path = Statistic;
+			sourceTree = "<group>";
+		};
+		3872EBDD282DAE93000C6F80 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3863F424278C89350096AA2D /* Settings */,
+				3863F425278C89420096AA2D /* Statistic */,
+				3892E27A27E8C55B0078A6AB /* Authentication */,
+				3863F422278C890B0096AA2D /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3872EBDE282DAEB0000C6F80 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3872EBE1282E63DE000C6F80 /* Extensions */,
+				3872EBDF282DAEDD000C6F80 /* UserData.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3872EBE1282E63DE000C6F80 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3872EBE2282E63FC000C6F80 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3892E27A27E8C55B0078A6AB /* Authentication */ = {
@@ -474,6 +504,8 @@
 				3800DF052789C80300EE5C5B /* AppDelegate.swift in Sources */,
 				38E2989427E8CC5A00F07E49 /* AuthViewController.swift in Sources */,
 				3872EBD8282D4E8F000C6F80 /* SettinngsViewController.swift in Sources */,
+				3872EBE3282E63FC000C6F80 /* UIColor+Extension.swift in Sources */,
+				3872EBE0282DAEDD000C6F80 /* UserData.swift in Sources */,
 				3800DF072789C80300EE5C5B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
