@@ -41,6 +41,8 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
+        
         nameField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self
@@ -76,8 +78,8 @@ private extension AuthViewController {
                 if error == nil {
                     self.dismiss(animated: true, completion: {})
                 } else {
-                    // TODO: Add error processing
-                    print("Error \(error.debugDescription)")
+                    let errorMessage = error?.localizedDescription ?? "Something went wrong"
+                    self.showAuthAlert(message: errorMessage)
                 }
             })
         } else {
