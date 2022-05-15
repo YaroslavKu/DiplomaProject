@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user == nil {
                 self.showModalAuth()
