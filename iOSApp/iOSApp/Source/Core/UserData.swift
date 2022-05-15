@@ -31,5 +31,17 @@ class UserData {
             completion(value)
         })
     }
+    
+    public func getPatients(completion: @escaping (([String: Any]) -> Void)) {
+        guard let uid = userUid else { return }
+        ref.child("users/\(uid)/patients").getData(completion:  { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            guard let value = snapshot.value as? [String: Any] else { return }
+            completion(value)
+        })
+    }
 }
 
