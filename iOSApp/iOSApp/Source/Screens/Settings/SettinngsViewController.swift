@@ -49,7 +49,7 @@ private extension SettinngsViewController {
         card.layer.cornerRadius = 10
         
         let iconContainer = UIView()
-        iconContainer.translatesAutoresizingMaskIntoConstraints = true
+        iconContainer.translatesAutoresizingMaskIntoConstraints = false
         iconContainer.layer.cornerRadius = 20
         iconContainer.backgroundColor = .ocean
         card.addArrangedSubview(iconContainer)
@@ -58,13 +58,14 @@ private extension SettinngsViewController {
         let icon = UIImageView(image: image)
         icon.tintColor = .white
         icon.frame = CGRect(x: 10, y: 10, width: 50, height: 50)
-        icon.translatesAutoresizingMaskIntoConstraints = true
+//        icon.translatesAutoresizingMaskIntoConstraints = false
         iconContainer.addSubview(icon)
         
         userName = UILabel()
         userName.font = userName.font.withSize(24)
         UserData.shared.getUserName() { name in
             self.userName.text = name
+            iconContainer.backgroundColor = .pickColor(alphabet: name.first!)
         }
         card.addArrangedSubview(userName)
         
