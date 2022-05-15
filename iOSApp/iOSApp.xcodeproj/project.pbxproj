@@ -18,6 +18,13 @@
 		3800DF282789C80500EE5C5B /* iOSAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800DF272789C80500EE5C5B /* iOSAppUITestsLaunchTests.swift */; };
 		380CC89A278A613B0092CE23 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380CC899278A613B0092CE23 /* Home.storyboard */; };
 		380CC89C278A61D10092CE23 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380CC89B278A61D10092CE23 /* Settings.storyboard */; };
+		38518EBF28312BFA0027284A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EBE28312BFA0027284A /* HomeViewController.swift */; };
+		38518EC5283133EC0027284A /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EC4283133EC0027284A /* CircleCollectionViewCell.swift */; };
+		38518EC7283135210027284A /* PatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EC6283135210027284A /* PatientData.swift */; };
+		38518EC9283158640027284A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EC8283158640027284A /* HomeModel.swift */; };
+		38518ECC283182460027284A /* AddPatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518ECB283182460027284A /* AddPatientViewController.swift */; };
+		38518ECE283182600027284A /* AddPatient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38518ECD283182600027284A /* AddPatient.storyboard */; };
+		38518ED02831AC1F0027284A /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518ECF2831AC1F0027284A /* TextTableViewCell.swift */; };
 		3863F420278C871F0096AA2D /* Statistic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3863F41F278C871F0096AA2D /* Statistic.storyboard */; };
 		3872EBD8282D4E8F000C6F80 /* SettinngsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBD7282D4E8F000C6F80 /* SettinngsViewController.swift */; };
 		3872EBDA282D583B000C6F80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */; };
@@ -65,6 +72,13 @@
 		3800DF342789CC0C00EE5C5B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		380CC899278A613B0092CE23 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		380CC89B278A61D10092CE23 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		38518EBE28312BFA0027284A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		38518EC4283133EC0027284A /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
+		38518EC6283135210027284A /* PatientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientData.swift; sourceTree = "<group>"; };
+		38518EC8283158640027284A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		38518ECB283182460027284A /* AddPatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPatientViewController.swift; sourceTree = "<group>"; };
+		38518ECD283182600027284A /* AddPatient.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPatient.storyboard; sourceTree = "<group>"; };
+		38518ECF2831AC1F0027284A /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		3863F41F278C871F0096AA2D /* Statistic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistic.storyboard; sourceTree = "<group>"; };
 		3872EBD7282D4E8F000C6F80 /* SettinngsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettinngsViewController.swift; sourceTree = "<group>"; };
 		3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -173,10 +187,29 @@
 			path = iOSAppUITests;
 			sourceTree = "<group>";
 		};
+		38518EC2283133720027284A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				38518EC4283133EC0027284A /* CircleCollectionViewCell.swift */,
+				38518ECF2831AC1F0027284A /* TextTableViewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		38518ECA283182040027284A /* AddPatient */ = {
+			isa = PBXGroup;
+			children = (
+				38518ECB283182460027284A /* AddPatientViewController.swift */,
+				38518ECD283182600027284A /* AddPatient.storyboard */,
+			);
+			path = AddPatient;
+			sourceTree = "<group>";
+		};
 		3863F421278C88EB0096AA2D /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				3872EBDE282DAEB0000C6F80 /* Core */,
+				38518EC2283133720027284A /* Components */,
 				3872EBDD282DAE93000C6F80 /* Screens */,
 			);
 			path = Source;
@@ -186,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				380CC899278A613B0092CE23 /* Home.storyboard */,
+				38518EBE28312BFA0027284A /* HomeViewController.swift */,
+				38518EC8283158640027284A /* HomeModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -210,6 +245,7 @@
 		3872EBDD282DAE93000C6F80 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				38518ECA283182040027284A /* AddPatient */,
 				3863F424278C89350096AA2D /* Settings */,
 				3863F425278C89420096AA2D /* Statistic */,
 				3892E27A27E8C55B0078A6AB /* Authentication */,
@@ -223,6 +259,7 @@
 			children = (
 				3872EBE1282E63DE000C6F80 /* Extensions */,
 				3872EBDF282DAEDD000C6F80 /* UserData.swift */,
+				38518EC6283135210027284A /* PatientData.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -366,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38518ECE283182600027284A /* AddPatient.storyboard in Resources */,
 				3800DF112789C80400EE5C5B /* LaunchScreen.storyboard in Resources */,
 				3872EBDA282D583B000C6F80 /* GoogleService-Info.plist in Resources */,
 				38E2989227E8C61400F07E49 /* Authentication.storyboard in Resources */,
@@ -503,9 +541,15 @@
 			files = (
 				3800DF052789C80300EE5C5B /* AppDelegate.swift in Sources */,
 				38E2989427E8CC5A00F07E49 /* AuthViewController.swift in Sources */,
+				38518EC5283133EC0027284A /* CircleCollectionViewCell.swift in Sources */,
+				38518EC7283135210027284A /* PatientData.swift in Sources */,
 				3872EBD8282D4E8F000C6F80 /* SettinngsViewController.swift in Sources */,
+				38518ED02831AC1F0027284A /* TextTableViewCell.swift in Sources */,
+				38518ECC283182460027284A /* AddPatientViewController.swift in Sources */,
 				3872EBE3282E63FC000C6F80 /* UIColor+Extension.swift in Sources */,
 				3872EBE0282DAEDD000C6F80 /* UserData.swift in Sources */,
+				38518EBF28312BFA0027284A /* HomeViewController.swift in Sources */,
+				38518EC9283158640027284A /* HomeModel.swift in Sources */,
 				3800DF072789C80300EE5C5B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
