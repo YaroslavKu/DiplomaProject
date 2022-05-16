@@ -58,7 +58,6 @@ private extension SettinngsViewController {
         let icon = UIImageView(image: image)
         icon.tintColor = .white
         icon.frame = CGRect(x: 10, y: 10, width: 50, height: 50)
-//        icon.translatesAutoresizingMaskIntoConstraints = false
         iconContainer.addSubview(icon)
         
         userName = UILabel()

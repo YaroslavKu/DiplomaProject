@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if user == nil {
                 self.showModalAuth()
             } else {
-                print("\(String(describing: UserData.shared.userUid))")
+                print("\(String(describing: Auth.auth().currentUser?.uid))")
+                NotificationCenter.default.post(name: .userAuthDidChenge, object: nil)
             }
         }
     }

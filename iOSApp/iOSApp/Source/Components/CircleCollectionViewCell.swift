@@ -74,6 +74,8 @@ class CircleCollectionViewCell: UICollectionViewCell {
         imageView.layer.borderColor = UIColor.ocean.cgColor
     }
     
+    
+    // TODO: Replase with UIImage extension
     private func getInitialsImage(initials: String) -> UIImage {
         let frame = CGRect(x: 0, y: 0, width: 70, height: 70)
         let nameLabel = UILabel(frame: frame)
