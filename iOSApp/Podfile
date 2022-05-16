@@ -20,3 +20,27 @@ target 'iOSApp' do
   end
 
 end
+
+target 'watchOSApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for watchOSApp
+    pod 'Firebase/Database'
+end
+
+target 'watchOSApp WatchKit App' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for watchOSApp WatchKit App
+  pod 'Firebase/Database'
+end
+
+target 'watchOSApp WatchKit Extension' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for watchOSApp WatchKit Extension
+    pod 'Firebase/Database'
+end
