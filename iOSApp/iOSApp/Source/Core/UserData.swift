@@ -13,7 +13,9 @@ class UserData {
     
     private let ref = Database.database().reference()
     
-    var userUid: String? = Auth.auth().currentUser?.uid
+    var userUid: String? {
+        Auth.auth().currentUser?.uid
+    }
     var userName: String = "Unknown"
     
     
@@ -42,6 +44,24 @@ class UserData {
             guard let value = snapshot.value as? [String: Any] else { return }
             completion(value)
         })
+    }
+    
+    public func getPatient(withId id: String, completion: @escaping (([String: Any]) -> Void)) {
+        guard let uid = userUid else { return }
+        ref.child("users/\(uid)/patients").getData(completion:  { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            guard let value = snapshot.value as? [String: Any],
+                  let patient = value[id] as? [String: Any] else { return }
+            completion(patient)
+        })
+    }
+    
+    public func deletePatient(with id: String) {
+        guard let uid = userUid else { return }
+        ref.child("users/\(uid)/patients/\(id)").removeValue()
     }
 }
 

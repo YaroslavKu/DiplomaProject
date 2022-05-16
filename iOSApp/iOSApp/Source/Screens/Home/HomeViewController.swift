@@ -15,13 +15,29 @@ class HomeViewController: UIViewController {
     
     private let ref = Database.database().reference()
     private let model = HomeModel()
+    
+    private var tableViewLastContentOffset: CGFloat = 0
+    private var selectedPatient: Patient? {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupViews()
         
-        guard let uid = UserData.shared.userUid else { return }
+        NotificationCenter.default.addObserver(self, selector: #selector(self.authStateDidChange(notification:)),
+                                               name: .userAuthDidChenge,
+                                               object: nil)
+    }
+    
+    @objc func authStateDidChange(notification: Notification) {
+        guard let uid = UserData.shared.userUid else {
+            ref.removeAllObservers()
+            return
+        }
         ref.child("users/\(uid)/patients").observe(.value, with: { _ in
             self.model.load() {
                 self.patientsList?.reloadData()
@@ -29,15 +45,10 @@ class HomeViewController: UIViewController {
         })
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    deinit {
         ref.removeAllObservers()
+        NotificationCenter.default.removeObserver(self, name: .userAuthDidChenge, object: nil)
     }
-
 }
 
 private extension HomeViewController {
@@ -72,18 +83,23 @@ private extension HomeViewController {
     
     func setupTableView() {
         tableView = UITableView()
+        tableView?.register(TextTableViewCell.self, forCellReuseIdentifier: TextTableViewCell.identifier)
         tableView?.translatesAutoresizingMaskIntoConstraints = false
         tableView?.delegate = self
-        tableView?.delegate = self
-        tableView?.backgroundColor = .red
+        tableView?.dataSource = self
+        tableView?.sectionHeaderHeight = 50
         view.addSubview(tableView!)
         
         NSLayoutConstraint.activate([
             tableView!.topAnchor.constraint(equalTo: patientsList!.bottomAnchor),
             tableView!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView!.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView!.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            tableView!.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+        
+        let lowPriorityTopConstraint = tableView!.topAnchor.constraint(equalTo: view.topAnchor)
+        lowPriorityTopConstraint.priority = .defaultLow
+        lowPriorityTopConstraint.isActive = true
     }
 }
 
@@ -119,6 +135,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if indexPath.row != model.patientsList.count {
             cell.setSelected(true)
+            selectedPatient = model.patientsList[indexPath.row]
         } else {
             let storyboard = UIStoryboard(name: "AddPatient", bundle: nil)
             let addPatientVC = storyboard.instantiateViewController(withIdentifier: "AddPatientViewController") as! AddPatientViewController
@@ -134,15 +151,52 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 25
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "Test"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(with: "Test")
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        headerView.backgroundColor = .ocean
+        
+        let label = UILabel()
+        label.frame = CGRect(x: 10, y: 5, width: headerView.frame.width-50, height: headerView.frame.height-10)
+        label.font = .systemFont(ofSize: 21)
+        label.textColor = .white
+        headerView.addSubview(label)
+        if let patient = selectedPatient {
+            label.text = "\(patient.name) \(patient.surname)"
+        } else {
+            label.text = "Unknown"
+        }
+        
+        let image = UIImage(systemName: "chevron.right")
+        let icon = UIImageView(image: image)
+        icon.frame = CGRect(x: headerView.frame.width - 40,
+                            y: 15,
+                            width: headerView.frame.height-30,
+                            height: headerView.frame.height-30)
+        icon.tintColor = .white
+        headerView.addSubview(icon)
+        
+        let tap = UITapGestureRecognizer(target: self, action:#selector(self.handleHeaderTap(_:)))
+        headerView.addGestureRecognizer(tap)
+        
+        return headerView
+    }
     
+    @objc func handleHeaderTap(_ sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "PatientProfile", bundle: nil)
+        let patientProfileVC = storyboard.instantiateViewController(withIdentifier: "PatientProfileViewController") as! PatientProfileViewController
+        patientProfileVC.patient = selectedPatient
+        present(patientProfileVC, animated: true, completion: nil)
+      }
 }
 
