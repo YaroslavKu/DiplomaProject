@@ -16,9 +16,7 @@ class HomeModel {
         UserData.shared.getPatients() { patientsDict in
             patientsDict.forEach({ p in
                 if let patient = p.value as? [String: Any] {
-                    self.patientsList.append(Patient(id: patient["id"] as? String ?? "",
-                                                name: patient["name"] as? String ?? "",
-                                                surname: patient["surname"] as? String ?? ""))
+                    self.patientsList.append(Patient(from: patient))
                 }
             })
             
