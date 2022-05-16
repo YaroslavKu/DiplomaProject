@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>419538004480-l58aeiq7i74lhnq53giejfkt0bcfbooj.apps.googleusercontent.com</string>
+	<string>419538004480-nb0ej219n8bmgg3guaeq77up4557n8pk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.419538004480-l58aeiq7i74lhnq53giejfkt0bcfbooj</string>
+	<string>com.googleusercontent.apps.419538004480-nb0ej219n8bmgg3guaeq77up4557n8pk</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBS8ceGNiGFm9jhwDdSwAkvNW1fsvin8Lw</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>yaroslav.kukhar.diploma.watchOSApp</string>
+	<string>yaroslav.kukhar.diploma.watchOSApp.watchkitapp</string>
 	<key>PROJECT_ID</key>
 	<string>nulp-diploma</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:419538004480:ios:4f70dbae3fd60caa7506e5</string>
+	<string>1:419538004480:ios:8325f333869fd81f7506e5</string>
 	<key>DATABASE_URL</key>
 	<string>https://nulp-diploma-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>

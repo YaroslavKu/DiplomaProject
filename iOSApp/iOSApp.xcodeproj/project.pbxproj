@@ -41,14 +41,14 @@
 		38518EFB2832F79C0027284A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EFA2832F79C0027284A /* NotificationController.swift */; };
 		38518EFD2832F79C0027284A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EFC2832F79C0027284A /* ComplicationController.swift */; };
 		38518EFF2832F79E0027284A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38518EFE2832F79E0027284A /* Assets.xcassets */; };
-		38518F0E2832FBE70027284A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38518F0D2832FBE70027284A /* GoogleService-Info.plist */; };
-		38518F0F2832FBE70027284A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38518F0D2832FBE70027284A /* GoogleService-Info.plist */; };
-		38518F102832FBE70027284A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38518F0D2832FBE70027284A /* GoogleService-Info.plist */; };
 		3863F420278C871F0096AA2D /* Statistic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3863F41F278C871F0096AA2D /* Statistic.storyboard */; };
 		3872EBD8282D4E8F000C6F80 /* SettinngsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBD7282D4E8F000C6F80 /* SettinngsViewController.swift */; };
 		3872EBDA282D583B000C6F80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */; };
 		3872EBE0282DAEDD000C6F80 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBDF282DAEDD000C6F80 /* UserData.swift */; };
 		3872EBE3282E63FC000C6F80 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBE2282E63FC000C6F80 /* UIColor+Extension.swift */; };
+		38D0852F28330E8E00DB8032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */; };
+		38D0853028330E8E00DB8032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */; };
+		38D0853128330E8E00DB8032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */; };
 		38E2989227E8C61400F07E49 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E2989127E8C61400F07E49 /* Authentication.storyboard */; };
 		38E2989427E8CC5A00F07E49 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2989327E8CC5A00F07E49 /* AuthViewController.swift */; };
 		4ED766B3A73B8C611DF24D66 /* Pods_iOSApp_iOSAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA713653807EC5412B48E751 /* Pods_iOSApp_iOSAppUITests.framework */; };
@@ -158,12 +158,12 @@
 		38518EFE2832F79E0027284A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38518F002832F79E0027284A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38518F012832F79E0027284A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		38518F0D2832FBE70027284A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3863F41F278C871F0096AA2D /* Statistic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistic.storyboard; sourceTree = "<group>"; };
 		3872EBD7282D4E8F000C6F80 /* SettinngsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettinngsViewController.swift; sourceTree = "<group>"; };
 		3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3872EBDF282DAEDD000C6F80 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		3872EBE2282E63FC000C6F80 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38E2989127E8C61400F07E49 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		38E2989327E8CC5A00F07E49 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		3CADBF6DEC9F8E3F9966976B /* Pods_watchOSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchOSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,7 +340,7 @@
 				38518EFC2832F79C0027284A /* ComplicationController.swift */,
 				38518EFE2832F79E0027284A /* Assets.xcassets */,
 				38518F002832F79E0027284A /* Info.plist */,
-				38518F0D2832FBE70027284A /* GoogleService-Info.plist */,
+				38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */,
 				38518F012832F79E0027284A /* PushNotificationPayload.apns */,
 			);
 			path = "watchOSApp WatchKit Extension";
@@ -667,7 +667,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38518F0E2832FBE70027284A /* GoogleService-Info.plist in Resources */,
+				38D0852F28330E8E00DB8032 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,7 +677,7 @@
 			files = (
 				38518EEC2832F79C0027284A /* Assets.xcassets in Resources */,
 				38518EEA2832F7980027284A /* Interface.storyboard in Resources */,
-				38518F0F2832FBE70027284A /* GoogleService-Info.plist in Resources */,
+				38D0853028330E8E00DB8032 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,7 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38518EFF2832F79E0027284A /* Assets.xcassets in Resources */,
-				38518F102832FBE70027284A /* GoogleService-Info.plist in Resources */,
+				38D0853128330E8E00DB8032 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
