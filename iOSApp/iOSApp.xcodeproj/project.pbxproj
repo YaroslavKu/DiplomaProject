@@ -32,7 +32,7 @@
 		38518ED9283260E60027284A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518ED8283260E60027284A /* UIImage+Extension.swift */; };
 		38518EDB28326A3E0027284A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EDA28326A3E0027284A /* UIView+Extension.swift */; };
 		38518EDD28327BF80027284A /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EDC28327BF80027284A /* Notification.Name+Extension.swift */; };
-		38518EE42832F7980027284A /* watchOSApp WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 38518EE32832F7980027284A /* watchOSApp WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		38518EE42832F7980027284A /* ElderlyCare.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 38518EE32832F7980027284A /* ElderlyCare.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		38518EEA2832F7980027284A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38518EE82832F7980027284A /* Interface.storyboard */; };
 		38518EEC2832F79C0027284A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38518EEB2832F79C0027284A /* Assets.xcassets */; };
 		38518EF22832F79C0027284A /* watchOSApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 38518EF12832F79C0027284A /* watchOSApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -46,6 +46,9 @@
 		3872EBDA282D583B000C6F80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */; };
 		3872EBE0282DAEDD000C6F80 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBDF282DAEDD000C6F80 /* UserData.swift */; };
 		3872EBE3282E63FC000C6F80 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBE2282E63FC000C6F80 /* UIColor+Extension.swift */; };
+		38B19E7D28342577009C9C47 /* EnterIDInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B19E7C28342577009C9C47 /* EnterIDInterfaceController.swift */; };
+		38B19E80283437F6009C9C47 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B19E7E28343761009C9C47 /* Constants.swift */; };
+		38B19E842834388B009C9C47 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B19E832834388B009C9C47 /* UserDefaults+Extension.swift */; };
 		38D0852F28330E8E00DB8032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */; };
 		38D0853028330E8E00DB8032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */; };
 		38D0853128330E8E00DB8032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */; };
@@ -106,7 +109,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				38518EE42832F7980027284A /* watchOSApp WatchKit App.app in Embed Watch Content */,
+				38518EE42832F7980027284A /* ElderlyCare.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,7 +150,7 @@
 		38518EDA28326A3E0027284A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		38518EDC28327BF80027284A /* Notification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extension.swift"; sourceTree = "<group>"; };
 		38518EE02832F7980027284A /* ElderlyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElderlyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		38518EE32832F7980027284A /* watchOSApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watchOSApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38518EE32832F7980027284A /* ElderlyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElderlyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38518EE92832F7980027284A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		38518EEB2832F79C0027284A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38518EF12832F79C0027284A /* watchOSApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watchOSApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +166,9 @@
 		3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3872EBDF282DAEDD000C6F80 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		3872EBE2282E63FC000C6F80 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		38B19E7C28342577009C9C47 /* EnterIDInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterIDInterfaceController.swift; sourceTree = "<group>"; };
+		38B19E7E28343761009C9C47 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		38B19E832834388B009C9C47 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38E2989127E8C61400F07E49 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		38E2989327E8CC5A00F07E49 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -256,7 +262,7 @@
 				3800DF172789C80500EE5C5B /* iOSAppTests.xctest */,
 				3800DF212789C80500EE5C5B /* iOSAppUITests.xctest */,
 				38518EE02832F7980027284A /* ElderlyCare.app */,
-				38518EE32832F7980027284A /* watchOSApp WatchKit App.app */,
+				38518EE32832F7980027284A /* ElderlyCare.app */,
 				38518EF12832F79C0027284A /* watchOSApp WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -266,9 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				3863F421278C88EB0096AA2D /* Source */,
-				3800DF042789C80300EE5C5B /* AppDelegate.swift */,
-				3800DF062789C80300EE5C5B /* SceneDelegate.swift */,
-				3800DF0A2789C80300EE5C5B /* Main.storyboard */,
 				3800DF0F2789C80400EE5C5B /* LaunchScreen.storyboard */,
 				3800DF0D2789C80400EE5C5B /* Assets.xcassets */,
 				3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */,
@@ -334,7 +337,7 @@
 		38518EF52832F79C0027284A /* watchOSApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				38518EF62832F79C0027284A /* InterfaceController.swift */,
+				38B19E7A283424BD009C9C47 /* Source */,
 				38518EF82832F79C0027284A /* ExtensionDelegate.swift */,
 				38518EFA2832F79C0027284A /* NotificationController.swift */,
 				38518EFC2832F79C0027284A /* ComplicationController.swift */,
@@ -399,6 +402,7 @@
 		3872EBDE282DAEB0000C6F80 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				38B19E7B283424F0009C9C47 /* Main */,
 				3872EBE1282E63DE000C6F80 /* Extensions */,
 				3872EBDF282DAEDD000C6F80 /* UserData.swift */,
 				38518EC6283135210027284A /* PatientData.swift */,
@@ -424,6 +428,43 @@
 				38E2989327E8CC5A00F07E49 /* AuthViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		38B19E7A283424BD009C9C47 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				38B19E81283437FC009C9C47 /* Core */,
+				38B19E8228343805009C9C47 /* Screens */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		38B19E7B283424F0009C9C47 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3800DF0A2789C80300EE5C5B /* Main.storyboard */,
+				3800DF042789C80300EE5C5B /* AppDelegate.swift */,
+				3800DF062789C80300EE5C5B /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		38B19E81283437FC009C9C47 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				38B19E7E28343761009C9C47 /* Constants.swift */,
+				38B19E832834388B009C9C47 /* UserDefaults+Extension.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		38B19E8228343805009C9C47 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				38518EF62832F79C0027284A /* InterfaceController.swift */,
+				38B19E7C28342577009C9C47 /* EnterIDInterfaceController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		AAD7873BC4D74DC525E294C5 /* Pods */ = {
@@ -554,7 +595,7 @@
 			);
 			name = "watchOSApp WatchKit App";
 			productName = "watchOSApp WatchKit App";
-			productReference = 38518EE32832F7980027284A /* watchOSApp WatchKit App.app */;
+			productReference = 38518EE32832F7980027284A /* ElderlyCare.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		38518EF02832F79C0027284A /* watchOSApp WatchKit Extension */ = {
@@ -599,9 +640,11 @@
 					};
 					38518EDF2832F7980027284A = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 					38518EE22832F7980027284A = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 					38518EF02832F79C0027284A = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -928,6 +971,9 @@
 				38518EFD2832F79C0027284A /* ComplicationController.swift in Sources */,
 				38518EF92832F79C0027284A /* ExtensionDelegate.swift in Sources */,
 				38518EF72832F79C0027284A /* InterfaceController.swift in Sources */,
+				38B19E7D28342577009C9C47 /* EnterIDInterfaceController.swift in Sources */,
+				38B19E80283437F6009C9C47 /* Constants.swift in Sources */,
+				38B19E842834388B009C9C47 /* UserDefaults+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1331,19 +1377,25 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5JQK8WRD6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = watchOSApp_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "watchOSApp WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yaroslav.kukhar.diploma.watchOSApp.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ElderlyCare;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 8.5;
@@ -1357,16 +1409,21 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5JQK8WRD6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = watchOSApp_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "watchOSApp WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yaroslav.kukhar.diploma.watchOSApp.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ElderlyCare;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1380,12 +1437,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1B2235ADFE4714E131D710A /* Pods-watchOSApp.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5JQK8WRD6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yaroslav.kukhar.diploma.watchOSApp;
 				PRODUCT_NAME = ElderlyCare;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1394,9 +1458,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F58EADC772395A56D80CCE0 /* Pods-watchOSApp.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5JQK8WRD6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yaroslav.kukhar.diploma.watchOSApp;
 				PRODUCT_NAME = ElderlyCare;

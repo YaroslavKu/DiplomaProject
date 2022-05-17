@@ -13,17 +13,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
         FirebaseApp.configure()
-        
-        let ref = Database.database().reference()
-        
-        ref.child("patients/1w85gR").getData(completion:  { error, snapshot in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            guard let value = snapshot.value as? [String: Any] else { return }
-            print(value)
-        })
     }
 
     func applicationDidBecomeActive() {

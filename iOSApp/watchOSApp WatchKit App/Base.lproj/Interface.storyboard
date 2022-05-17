@@ -1,21 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="20037" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38"/>
+    <device id="watch40"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="20006"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
     </dependencies>
     <scenes>
+        <!--EnterID Interface Controller-->
+        <scene sceneID="FR8-Ii-j7q">
+            <objects>
+                <controller id="54T-t1-Hoc" customClass="EnterIDInterfaceController" customModule="watchOSApp_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.20000000000000001" alignment="left" id="DtT-xa-rR9">
+                            <items>
+                                <label width="0.75" height="1" alignment="left" id="4yp-On-gmU"/>
+                                <button width="0.25" height="1" alignment="left" title="C" id="XoQ-mK-oBC">
+                                    <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                    <connections>
+                                        <action selector="backPaceButtonPressed" destination="54T-t1-Hoc" id="1ab-CQ-tcq"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.20000000000000001" alignment="left" contentMode="scaleAspectFit" id="VoU-P0-JxU">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="1" id="QlZ-yk-xH8">
+                                    <connections>
+                                        <action selector="oneButtonPressed" destination="54T-t1-Hoc" id="6wJ-3C-X9P"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="2" id="Bt7-9q-uq6">
+                                    <connections>
+                                        <action selector="twoButtonPressed" destination="54T-t1-Hoc" id="il1-0T-y0j"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="3" id="TRR-1K-jDY">
+                                    <connections>
+                                        <action selector="threeButtonPressed" destination="54T-t1-Hoc" id="nRE-uB-bY4"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.20000000000000001" alignment="left" contentMode="scaleAspectFit" id="dqI-Zt-dR9">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="4" id="zYm-Q5-1ih">
+                                    <connections>
+                                        <action selector="fourButtonPressed" destination="54T-t1-Hoc" id="Sqw-mD-LPz"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="5" id="BZa-ms-9HZ">
+                                    <connections>
+                                        <action selector="fiveButtonPressed" destination="54T-t1-Hoc" id="WMT-qM-LEg"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="6" id="6Hh-ay-n0t">
+                                    <connections>
+                                        <action selector="sixButtonPressed" destination="54T-t1-Hoc" id="IyJ-Fe-zha"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.20000000000000001" alignment="left" contentMode="scaleAspectFit" id="7Bn-Iy-OKW">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="7" id="dAK-7V-dXp">
+                                    <connections>
+                                        <action selector="sevenButtonPressed" destination="54T-t1-Hoc" id="3Ce-ag-Sgz"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="8" id="Rwg-Ya-Nh1">
+                                    <connections>
+                                        <action selector="eightButtonPressed" destination="54T-t1-Hoc" id="63t-pL-eMj"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="9" id="42m-MZ-Fae">
+                                    <connections>
+                                        <action selector="nineButtonPressed" destination="54T-t1-Hoc" id="9eB-Lo-Eey"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.20000000000000001" alignment="left" contentMode="scaleAspectFit" id="6ke-xZ-wSM">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" alpha="0.0" title="1" id="EMu-OA-tQl"/>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="0" id="saP-4Z-mMh">
+                                    <connections>
+                                        <action selector="zeroButtonPressed" destination="54T-t1-Hoc" id="bvV-MD-Efw"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="Done" id="tdP-mz-VwP">
+                                    <color key="backgroundColor" name="AccentColor"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                    <connections>
+                                        <action selector="doneButtonPressed" destination="54T-t1-Hoc" id="Dcp-ju-Gh0"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="idLabel" destination="4yp-On-gmU" id="saG-4X-BuW"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-103.74358974358975" y="344.79487179487182"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOSApp_WatchKit_App" customModuleProvider="target">
+                <controller contentMode="scaleAspectFit" spacing="10" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOSApp_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Label" id="yYI-4a-jiz"/>
+                        <label width="1" alignment="left" text="Your supervisor:" textAlignment="center" id="FPa-J9-bsL">
+                            <fontDescription key="font" type="system" pointSize="14"/>
+                        </label>
+                        <label width="1" alignment="left" textAlignment="center" numberOfLines="0" id="gvh-7Y-jBH">
+                            <fontDescription key="font" type="boldSystem" pointSize="21"/>
+                        </label>
+                        <label alignment="left" textAlignment="left" numberOfLines="0" id="151-hJ-PIA">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
+                        <separator alignment="left" id="Rv3-hz-gVM"/>
+                        <label width="1" alignment="left" text="Coonect to supervisor via patient ID:" textAlignment="center" numberOfLines="0" id="yYI-4a-jiz">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
+                        <button width="1" alignment="left" title="Connect" id="Wvo-wM-JGf">
+                            <connections>
+                                <segue destination="54T-t1-Hoc" kind="modal" id="OY4-Wz-OOS"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="connectButton" destination="Wvo-wM-JGf" id="4d7-44-dPw"/>
+                        <outlet property="connectTitle" destination="yYI-4a-jiz" id="ZC4-sn-OVq"/>
+                        <outlet property="patientIdTitle" destination="151-hJ-PIA" id="FgZ-PP-IJs"/>
+                        <outlet property="separetoView" destination="Rv3-hz-gVM" id="Fh7-CU-c7z"/>
+                        <outlet property="superviserName" destination="gvh-7Y-jBH" id="qeo-lI-7If"/>
+                        <outlet property="supervisorTitle" destination="FPa-J9-bsL" id="bd8-A8-jOq"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="-414.71604938271605" y="343.45177664974614"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -49,4 +175,9 @@
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
