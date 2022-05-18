@@ -109,7 +109,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller contentMode="scaleAspectFit" spacing="10" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOSApp_WatchKit_App" customModuleProvider="target">
+                <controller contentMode="scaleAspectFit" spacing="10" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="ElderlyCare" customModuleProvider="target">
                     <items>
                         <label width="1" alignment="left" text="Your supervisor:" textAlignment="center" id="FPa-J9-bsL">
                             <fontDescription key="font" type="system" pointSize="14"/>
@@ -163,14 +163,14 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="watchOSApp_WatchKit_App" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="ElderlyCare" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="watchOSApp_WatchKit_App" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="ElderlyCare" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
         </scene>

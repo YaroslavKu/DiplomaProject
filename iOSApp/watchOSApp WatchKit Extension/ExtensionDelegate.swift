@@ -7,12 +7,15 @@
 
 import WatchKit
 import Firebase
+import HealthKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
         FirebaseApp.configure()
+        
+        HealthKitManager.shared.authorizeHealthKit()
     }
 
     func applicationDidBecomeActive() {
@@ -53,5 +56,4 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
-
 }
