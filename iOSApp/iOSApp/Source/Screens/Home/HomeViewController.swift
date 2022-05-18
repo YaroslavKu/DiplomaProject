@@ -19,7 +19,12 @@ class HomeViewController: UIViewController {
     private var tableViewLastContentOffset: CGFloat = 0
     private var selectedPatient: Patient? {
         didSet {
+            oldValue?.removeAllObservers()
+            selectedPatient?.onHeartRateDidChange {
+                self.tableView?.reloadData()
+            }
             tableView?.reloadData()
+            tableView?.isHidden = false
         }
     }
 
@@ -31,6 +36,7 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.authStateDidChange(notification:)),
                                                name: .userAuthDidChenge,
                                                object: nil)
+        tableView?.isHidden = true
     }
     
     @objc func authStateDidChange(notification: Notification) {
@@ -38,6 +44,7 @@ class HomeViewController: UIViewController {
             ref.removeAllObservers()
             return
         }
+        
         ref.child("users/\(uid)/patients").observe(.value, with: { _ in
             self.model.load() {
                 self.patientsList?.reloadData()
@@ -84,10 +91,12 @@ private extension HomeViewController {
     func setupTableView() {
         tableView = UITableView()
         tableView?.register(TextTableViewCell.self, forCellReuseIdentifier: TextTableViewCell.identifier)
+        tableView?.register(WatchOSDataTableViewCell.self, forCellReuseIdentifier: WatchOSDataTableViewCell.identifier)
         tableView?.translatesAutoresizingMaskIntoConstraints = false
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.sectionHeaderHeight = 50
+        tableView?.separatorColor = .clear
         view.addSubview(tableView!)
         
         NSLayoutConstraint.activate([
@@ -151,14 +160,39 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WatchOSDataTableViewCell.identifier, for: indexPath) as? WatchOSDataTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(with: "Test")
+        
+        var heartRate: String {
+            if let heartRate = selectedPatient?.heartRate {
+                return String(Int(heartRate))
+            } else {
+                return "nil"
+            }
+        }
+        
+        var saturation: String {
+            guard let saturationDict = selectedPatient?.saturation else { return "nil" }
+            
+            let latestDate = Array(saturationDict.keys).sorted(by: {$0.toDate()! > $1.toDate()!})[0]
+            
+            guard let saturation = saturationDict[latestDate] else { return "nil" }
+            return String(saturation)
+        }
+        
+        cell.configure(heartRate: "❤️ \(heartRate) bpm",
+                       oxygenRate: "🅾️ \(saturation)%",
+                       bgColor: UIColor.pickColor(alphabet: selectedPatient?.name.first ?? "A"))
+        
         return cell
     }
     

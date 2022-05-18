@@ -19,6 +19,8 @@
 		3800DF282789C80500EE5C5B /* iOSAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800DF272789C80500EE5C5B /* iOSAppUITestsLaunchTests.swift */; };
 		380CC89A278A613B0092CE23 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380CC899278A613B0092CE23 /* Home.storyboard */; };
 		380CC89C278A61D10092CE23 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380CC89B278A61D10092CE23 /* Settings.storyboard */; };
+		381C532E28353E8B00B2FBC2 /* WatchOSDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C532D28353E8B00B2FBC2 /* WatchOSDataTableViewCell.swift */; };
+		381C533028359CBE00B2FBC2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C532F28359CBE00B2FBC2 /* String+Extension.swift */; };
 		38518EBF28312BFA0027284A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EBE28312BFA0027284A /* HomeViewController.swift */; };
 		38518EC5283133EC0027284A /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EC4283133EC0027284A /* CircleCollectionViewCell.swift */; };
 		38518EC7283135210027284A /* PatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EC6283135210027284A /* PatientData.swift */; };
@@ -49,6 +51,8 @@
 		38B19E7D28342577009C9C47 /* EnterIDInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B19E7C28342577009C9C47 /* EnterIDInterfaceController.swift */; };
 		38B19E80283437F6009C9C47 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B19E7E28343761009C9C47 /* Constants.swift */; };
 		38B19E842834388B009C9C47 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B19E832834388B009C9C47 /* UserDefaults+Extension.swift */; };
+		38B19E8728350155009C9C47 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B19E8628350155009C9C47 /* HealthKit.framework */; };
+		38B19E8928351BD5009C9C47 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B19E8828351BD5009C9C47 /* HealthKitManager.swift */; };
 		38D0852F28330E8E00DB8032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */; };
 		38D0853028330E8E00DB8032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */; };
 		38D0853128330E8E00DB8032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */; };
@@ -136,6 +140,8 @@
 		3800DF342789CC0C00EE5C5B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		380CC899278A613B0092CE23 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		380CC89B278A61D10092CE23 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		381C532D28353E8B00B2FBC2 /* WatchOSDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchOSDataTableViewCell.swift; sourceTree = "<group>"; };
+		381C532F28359CBE00B2FBC2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		38518EBE28312BFA0027284A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		38518EC4283133EC0027284A /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		38518EC6283135210027284A /* PatientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientData.swift; sourceTree = "<group>"; };
@@ -169,6 +175,9 @@
 		38B19E7C28342577009C9C47 /* EnterIDInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterIDInterfaceController.swift; sourceTree = "<group>"; };
 		38B19E7E28343761009C9C47 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		38B19E832834388B009C9C47 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		38B19E8528350155009C9C47 /* watchOSApp WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watchOSApp WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		38B19E8628350155009C9C47 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		38B19E8828351BD5009C9C47 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		38D0852E28330E8E00DB8032 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38E2989127E8C61400F07E49 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		38E2989327E8CC5A00F07E49 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEF2613B6C5B1DF481FB1AB3 /* Pods_watchOSApp_WatchKit_Extension.framework in Frameworks */,
+				38B19E8728350155009C9C47 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +312,7 @@
 			children = (
 				38518EC4283133EC0027284A /* CircleCollectionViewCell.swift */,
 				38518ECF2831AC1F0027284A /* TextTableViewCell.swift */,
+				381C532D28353E8B00B2FBC2 /* WatchOSDataTableViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -337,6 +348,7 @@
 		38518EF52832F79C0027284A /* watchOSApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				38B19E8528350155009C9C47 /* watchOSApp WatchKit Extension.entitlements */,
 				38B19E7A283424BD009C9C47 /* Source */,
 				38518EF82832F79C0027284A /* ExtensionDelegate.swift */,
 				38518EFA2832F79C0027284A /* NotificationController.swift */,
@@ -417,6 +429,7 @@
 				38518ED8283260E60027284A /* UIImage+Extension.swift */,
 				38518EDA28326A3E0027284A /* UIView+Extension.swift */,
 				38518EDC28327BF80027284A /* Notification.Name+Extension.swift */,
+				381C532F28359CBE00B2FBC2 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -454,6 +467,7 @@
 			children = (
 				38B19E7E28343761009C9C47 /* Constants.swift */,
 				38B19E832834388B009C9C47 /* UserDefaults+Extension.swift */,
+				38B19E8828351BD5009C9C47 /* HealthKitManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -489,6 +503,7 @@
 		F08BAB4E5B207D61857671BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38B19E8628350155009C9C47 /* HealthKit.framework */,
 				FBE2AA2F9F4E05238739BAF9 /* Pods_iOSApp.framework */,
 				AA713653807EC5412B48E751 /* Pods_iOSApp_iOSAppUITests.framework */,
 				09BEEE8D73AE225868B9677D /* Pods_iOSAppTests.framework */,
@@ -929,6 +944,7 @@
 				3800DF052789C80300EE5C5B /* AppDelegate.swift in Sources */,
 				38E2989427E8CC5A00F07E49 /* AuthViewController.swift in Sources */,
 				38518EDB28326A3E0027284A /* UIView+Extension.swift in Sources */,
+				381C533028359CBE00B2FBC2 /* String+Extension.swift in Sources */,
 				38518EDD28327BF80027284A /* Notification.Name+Extension.swift in Sources */,
 				38518EC5283133EC0027284A /* CircleCollectionViewCell.swift in Sources */,
 				38518ED728325DF50027284A /* PatientProfileModel.swift in Sources */,
@@ -943,6 +959,7 @@
 				38518ED9283260E60027284A /* UIImage+Extension.swift in Sources */,
 				38518EC9283158640027284A /* HomeModel.swift in Sources */,
 				3800DF072789C80300EE5C5B /* SceneDelegate.swift in Sources */,
+				381C532E28353E8B00B2FBC2 /* WatchOSDataTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -969,6 +986,7 @@
 			files = (
 				38518EFB2832F79C0027284A /* NotificationController.swift in Sources */,
 				38518EFD2832F79C0027284A /* ComplicationController.swift in Sources */,
+				38B19E8928351BD5009C9C47 /* HealthKitManager.swift in Sources */,
 				38518EF92832F79C0027284A /* ExtensionDelegate.swift in Sources */,
 				38518EF72832F79C0027284A /* InterfaceController.swift in Sources */,
 				38B19E7D28342577009C9C47 /* EnterIDInterfaceController.swift in Sources */,
@@ -1311,6 +1329,7 @@
 			baseConfigurationReference = 537C37E5F8F387C44EFA7E26 /* Pods-watchOSApp WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "watchOSApp WatchKit Extension/watchOSApp WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5JQK8WRD6;
@@ -1343,6 +1362,7 @@
 			baseConfigurationReference = 206166DBF5C35CAA216B16C5 /* Pods-watchOSApp WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "watchOSApp WatchKit Extension/watchOSApp WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5JQK8WRD6;
