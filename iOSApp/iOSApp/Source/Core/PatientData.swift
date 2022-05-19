@@ -20,7 +20,7 @@ class Patient {
     var description: String?
     
     var heartRate: Double?
-    var saturation: [String: Int]?
+    var data: [String: Any]?
     
     var isAppleWatchConnected: Bool?
     
@@ -32,7 +32,7 @@ class Patient {
         self.age = dict["age"] as? Int
         self.description = dict["description"] as? String
         self.heartRate = dict["heartRate"] as? Double
-        self.saturation = dict["saturation"] as? [String: Int]
+        self.data = dict["data"] as? [String: Any]
     }
     
     public func toDict() -> [String: Any] {

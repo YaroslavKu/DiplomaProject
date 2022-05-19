@@ -11,14 +11,14 @@ import Charts
 
 class HomeViewController: UIViewController {
     
-    private var patientsList: UICollectionView?
-    private var tableView: UITableView?
+    var patientsList: UICollectionView?
+    var tableView: UITableView?
     
-    private let ref = Database.database().reference()
-    private let model = HomeModel()
+    let ref = Database.database().reference()
+    let model = HomeModel()
     
-    private var tableViewLastContentOffset: CGFloat = 0
-    private var selectedPatient: Patient? {
+    var tableViewLastContentOffset: CGFloat = 0
+    var selectedPatient: Patient? {
         didSet {
             oldValue?.removeAllObservers()
             selectedPatient?.onHeartRateDidChange {
@@ -99,6 +99,7 @@ private extension HomeViewController {
         tableView?.dataSource = self
         tableView?.sectionHeaderHeight = 50
         tableView?.separatorColor = .clear
+        tableView?.tableFooterView = setupFooterView()
         view.addSubview(tableView!)
         
         NSLayoutConstraint.activate([
@@ -112,176 +113,45 @@ private extension HomeViewController {
         lowPriorityTopConstraint.priority = .defaultLow
         lowPriorityTopConstraint.isActive = true
     }
-}
+    
+    func setupFooterView() -> UIView {
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView!.frame.width, height: 50))
+        
+        var configuration = UIButton.Configuration.plain()
+        configuration.title = "Add custom data"
+        
+        let addCustomDataButton = UIButton(configuration: configuration)
+        addCustomDataButton.isSelected = true
+        addCustomDataButton.addTarget(self, action: #selector(handleFooterTap(_:)), for: .touchUpInside)
+        addCustomDataButton.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(addCustomDataButton)
+        
+        NSLayoutConstraint.activate([
+            addCustomDataButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            addCustomDataButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
+        ])
+        
+        return containerView
+    }
+    
+    @objc func handleFooterTap(_ sender: UIButton) {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Add new data", message: nil, preferredStyle: .alert)
 
-// MARK: - UICollectionViewDataSource
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.patientsList.count + 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CircleCollectionViewCell.identifier,
-                                                            for: indexPath) as? CircleCollectionViewCell else {
-            return UICollectionViewCell()
+        alert.addTextField { (titleTextField) in
+            titleTextField.placeholder = "Value name"
         }
-        if indexPath.row == model.patientsList.count {
-            //TODO: Fix bug on deleteng user when model.patientsList.count == 1
-            cell.configure(initials: "+", label: "Add new patient")
-            
-        } else {
-            cell.configure(with: model.patientsList[indexPath.row])
+        alert.addTextField { (initialValuetextField) in
+            initialValuetextField.placeholder = "InitialValue"
         }
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = patientsList?.cellForItem(at: indexPath) as! CircleCollectionViewCell
-        cell.setSelected(false)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = patientsList?.cellForItem(at: indexPath) as! CircleCollectionViewCell
-        
-        if indexPath.row != model.patientsList.count {
-            cell.setSelected(true)
-            selectedPatient = model.patientsList[indexPath.row]
-        } else {
-            let storyboard = UIStoryboard(name: "AddPatient", bundle: nil)
-            let addPatientVC = storyboard.instantiateViewController(withIdentifier: "AddPatientViewController") as! AddPatientViewController
-            present(addPatientVC, animated: true, completion: nil)
-        }
-    }
-}
 
-// MARK: - UITableViewDataSource
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-            case 0:
-                return 70
-            case 1:
-                return 200
-            default:
-                return 10
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-            case 0:
-                return configureWatchDateCell(for: indexPath)
-            case 1:
-                return configureBarChartCell(for: indexPath)
-            default:
-                return UITableViewCell()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
-        headerView.backgroundColor = .ocean
-        
-        let label = UILabel()
-        label.frame = CGRect(x: 10, y: 5, width: headerView.frame.width-50, height: headerView.frame.height-10)
-        label.font = .systemFont(ofSize: 21)
-        label.textColor = .white
-        headerView.addSubview(label)
-        if let patient = selectedPatient {
-            label.text = "\(patient.name) \(patient.surname)"
-        } else {
-            label.text = "Unknown"
-        }
-        
-        let image = UIImage(systemName: "chevron.right")
-        let icon = UIImageView(image: image)
-        icon.frame = CGRect(x: headerView.frame.width - 40,
-                            y: 15,
-                            width: headerView.frame.height-30,
-                            height: headerView.frame.height-30)
-        icon.tintColor = .white
-        headerView.addSubview(icon)
-        
-        let tap = UITapGestureRecognizer(target: self, action:#selector(self.handleHeaderTap(_:)))
-        headerView.addGestureRecognizer(tap)
-        
-        return headerView
-    }
-    
-    @objc func handleHeaderTap(_ sender: UITapGestureRecognizer) {
-        let storyboard = UIStoryboard(name: "PatientProfile", bundle: nil)
-        let patientProfileVC = storyboard.instantiateViewController(withIdentifier: "PatientProfileViewController") as! PatientProfileViewController
-        patientProfileVC.patient = selectedPatient
-        present(patientProfileVC, animated: true, completion: nil)
-    }
-}
-
-private extension HomeViewController {
-    private func configureWatchDateCell(for indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView?.dequeueReusableCell(withIdentifier: WatchOSDataTableViewCell.identifier, for: indexPath) as? WatchOSDataTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        var heartRate: String {
-            if let heartRate = selectedPatient?.heartRate {
-                return String(Int(heartRate))
-            } else {
-                return "nil"
+        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak alert] (_) in
+            for i in alert!.textFields! {
+                print(i.text)
             }
-        }
-        
-        var saturation: String {
-            guard let saturationDict = selectedPatient?.saturation else { return "nil" }
-            
-            let latestDate = Array(saturationDict.keys).sorted(by: {$0.toDate()! > $1.toDate()!})[0]
-            
-            guard let saturation = saturationDict[latestDate] else { return "nil" }
-            return String(saturation)
-        }
-        
-        cell.configure(heartRate: "❤️ \(heartRate) bpm",
-                       oxygenRate: "🅾️ \(saturation)%",
-                       bgColor: UIColor.pickColor(alphabet: selectedPatient?.name.first ?? "A"))
-        
-        return cell
-    }
-    
-    private func configureBarChartCell(for indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView?.dequeueReusableCell(withIdentifier: BarChartTableViewCell.identifier,
-                                                        for: indexPath) as? BarChartTableViewCell,
-              let patient = selectedPatient else {
-            return UITableViewCell()
-        }
-        
-        var entries: [BarChartDataEntry] = []
-        
-        if let saturationDict = patient.saturation {
-            for (i, k) in Array(saturationDict.keys).sorted(by: {$0.toDate()! < $1.toDate()!}).enumerated() {
-                let x = Double(i)
-                let y = Double(patient.saturation![k]!)
-                entries.append(
-                    BarChartDataEntry(x: x,
-                                      y: y)
-                )
-            }
-        }
-        
-        let set = BarChartDataSet(entries: entries, label: "Saturation")
-        set.colors = ChartColorTemplates.vordiplom()
-        let data = BarChartData(dataSet: set)
-        
-        cell.configure(with: data)
-        
-        return cell
+        }))
+
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

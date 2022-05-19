@@ -22,6 +22,8 @@
 		381C532E28353E8B00B2FBC2 /* WatchOSDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C532D28353E8B00B2FBC2 /* WatchOSDataTableViewCell.swift */; };
 		381C533028359CBE00B2FBC2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C532F28359CBE00B2FBC2 /* String+Extension.swift */; };
 		381C533228364D4000B2FBC2 /* BarChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C533128364D4000B2FBC2 /* BarChartTableViewCell.swift */; };
+		381C53352836782C00B2FBC2 /* HomeViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C53342836782C00B2FBC2 /* HomeViewController+UITableViewDataSource.swift */; };
+		381C53372836796700B2FBC2 /* HomeViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381C53362836796700B2FBC2 /* HomeViewController+UICollectionViewDataSource.swift */; };
 		38518EBF28312BFA0027284A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EBE28312BFA0027284A /* HomeViewController.swift */; };
 		38518EC5283133EC0027284A /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EC4283133EC0027284A /* CircleCollectionViewCell.swift */; };
 		38518EC7283135210027284A /* PatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EC6283135210027284A /* PatientData.swift */; };
@@ -144,6 +146,8 @@
 		381C532D28353E8B00B2FBC2 /* WatchOSDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchOSDataTableViewCell.swift; sourceTree = "<group>"; };
 		381C532F28359CBE00B2FBC2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		381C533128364D4000B2FBC2 /* BarChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTableViewCell.swift; sourceTree = "<group>"; };
+		381C53342836782C00B2FBC2 /* HomeViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		381C53362836796700B2FBC2 /* HomeViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		38518EBE28312BFA0027284A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		38518EC4283133EC0027284A /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		38518EC6283135210027284A /* PatientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientData.swift; sourceTree = "<group>"; };
@@ -309,6 +313,15 @@
 			path = iOSAppUITests;
 			sourceTree = "<group>";
 		};
+		381C5333283677D200B2FBC2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				381C53342836782C00B2FBC2 /* HomeViewController+UITableViewDataSource.swift */,
+				381C53362836796700B2FBC2 /* HomeViewController+UICollectionViewDataSource.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		38518EC2283133720027284A /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +390,7 @@
 		3863F422278C890B0096AA2D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				381C5333283677D200B2FBC2 /* Extensions */,
 				380CC899278A613B0092CE23 /* Home.storyboard */,
 				38518EBE28312BFA0027284A /* HomeViewController.swift */,
 				38518EC8283158640027284A /* HomeModel.swift */,
@@ -953,6 +967,7 @@
 				38518ED728325DF50027284A /* PatientProfileModel.swift in Sources */,
 				38518EC7283135210027284A /* PatientData.swift in Sources */,
 				381C533228364D4000B2FBC2 /* BarChartTableViewCell.swift in Sources */,
+				381C53352836782C00B2FBC2 /* HomeViewController+UITableViewDataSource.swift in Sources */,
 				3872EBD8282D4E8F000C6F80 /* SettinngsViewController.swift in Sources */,
 				38518ED02831AC1F0027284A /* TextTableViewCell.swift in Sources */,
 				38518ECC283182460027284A /* AddPatientViewController.swift in Sources */,
@@ -962,6 +977,7 @@
 				38518ED328325CE50027284A /* PatientProfileViewController.swift in Sources */,
 				38518ED9283260E60027284A /* UIImage+Extension.swift in Sources */,
 				38518EC9283158640027284A /* HomeModel.swift in Sources */,
+				381C53372836796700B2FBC2 /* HomeViewController+UICollectionViewDataSource.swift in Sources */,
 				3800DF072789C80300EE5C5B /* SceneDelegate.swift in Sources */,
 				381C532E28353E8B00B2FBC2 /* WatchOSDataTableViewCell.swift in Sources */,
 			);
