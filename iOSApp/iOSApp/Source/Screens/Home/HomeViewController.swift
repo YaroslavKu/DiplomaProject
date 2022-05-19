@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Charts
 
 class HomeViewController: UIViewController {
     
@@ -92,6 +93,7 @@ private extension HomeViewController {
         tableView = UITableView()
         tableView?.register(TextTableViewCell.self, forCellReuseIdentifier: TextTableViewCell.identifier)
         tableView?.register(WatchOSDataTableViewCell.self, forCellReuseIdentifier: WatchOSDataTableViewCell.identifier)
+        tableView?.register(BarChartTableViewCell.self, forCellReuseIdentifier: BarChartTableViewCell.identifier)
         tableView?.translatesAutoresizingMaskIntoConstraints = false
         tableView?.delegate = self
         tableView?.dataSource = self
@@ -160,40 +162,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        switch indexPath.row {
+            case 0:
+                return 70
+            case 1:
+                return 200
+            default:
+                return 10
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: WatchOSDataTableViewCell.identifier, for: indexPath) as? WatchOSDataTableViewCell else {
-            return UITableViewCell()
+        switch indexPath.row {
+            case 0:
+                return configureWatchDateCell(for: indexPath)
+            case 1:
+                return configureBarChartCell(for: indexPath)
+            default:
+                return UITableViewCell()
         }
-        
-        var heartRate: String {
-            if let heartRate = selectedPatient?.heartRate {
-                return String(Int(heartRate))
-            } else {
-                return "nil"
-            }
-        }
-        
-        var saturation: String {
-            guard let saturationDict = selectedPatient?.saturation else { return "nil" }
-            
-            let latestDate = Array(saturationDict.keys).sorted(by: {$0.toDate()! > $1.toDate()!})[0]
-            
-            guard let saturation = saturationDict[latestDate] else { return "nil" }
-            return String(saturation)
-        }
-        
-        cell.configure(heartRate: "❤️ \(heartRate) bpm",
-                       oxygenRate: "🅾️ \(saturation)%",
-                       bgColor: UIColor.pickColor(alphabet: selectedPatient?.name.first ?? "A"))
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -231,6 +222,66 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let patientProfileVC = storyboard.instantiateViewController(withIdentifier: "PatientProfileViewController") as! PatientProfileViewController
         patientProfileVC.patient = selectedPatient
         present(patientProfileVC, animated: true, completion: nil)
-      }
+    }
+}
+
+private extension HomeViewController {
+    private func configureWatchDateCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView?.dequeueReusableCell(withIdentifier: WatchOSDataTableViewCell.identifier, for: indexPath) as? WatchOSDataTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        var heartRate: String {
+            if let heartRate = selectedPatient?.heartRate {
+                return String(Int(heartRate))
+            } else {
+                return "nil"
+            }
+        }
+        
+        var saturation: String {
+            guard let saturationDict = selectedPatient?.saturation else { return "nil" }
+            
+            let latestDate = Array(saturationDict.keys).sorted(by: {$0.toDate()! > $1.toDate()!})[0]
+            
+            guard let saturation = saturationDict[latestDate] else { return "nil" }
+            return String(saturation)
+        }
+        
+        cell.configure(heartRate: "❤️ \(heartRate) bpm",
+                       oxygenRate: "🅾️ \(saturation)%",
+                       bgColor: UIColor.pickColor(alphabet: selectedPatient?.name.first ?? "A"))
+        
+        return cell
+    }
+    
+    private func configureBarChartCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView?.dequeueReusableCell(withIdentifier: BarChartTableViewCell.identifier,
+                                                        for: indexPath) as? BarChartTableViewCell,
+              let patient = selectedPatient else {
+            return UITableViewCell()
+        }
+        
+        var entries: [BarChartDataEntry] = []
+        
+        if let saturationDict = patient.saturation {
+            for (i, k) in Array(saturationDict.keys).sorted(by: {$0.toDate()! < $1.toDate()!}).enumerated() {
+                let x = Double(i)
+                let y = Double(patient.saturation![k]!)
+                entries.append(
+                    BarChartDataEntry(x: x,
+                                      y: y)
+                )
+            }
+        }
+        
+        let set = BarChartDataSet(entries: entries, label: "Saturation")
+        set.colors = ChartColorTemplates.vordiplom()
+        let data = BarChartData(dataSet: set)
+        
+        cell.configure(with: data)
+        
+        return cell
+    }
 }
 

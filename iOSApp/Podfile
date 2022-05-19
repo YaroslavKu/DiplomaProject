@@ -9,6 +9,8 @@ target 'iOSApp' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  
+  pod 'Charts'
 
   target 'iOSAppTests' do
     inherit! :search_paths

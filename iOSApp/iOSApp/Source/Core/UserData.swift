@@ -29,7 +29,7 @@ class UserData {
                 print(error!.localizedDescription)
                 return
             }
-            guard let value = snapshot.value as? String else { return }
+            guard let value = snapshot?.value as? String else { return }
             completion(value)
         })
     }
@@ -41,7 +41,7 @@ class UserData {
                 print(error!.localizedDescription)
                 return
             }
-            guard let value = snapshot.value as? [String: Any] else { return }
+            guard let value = snapshot?.value as? [String: Any] else { return }
             completion(value)
         })
     }
@@ -53,7 +53,7 @@ class UserData {
                 print(error!.localizedDescription)
                 return
             }
-            guard let value = snapshot.value as? [String: Any],
+            guard let value = snapshot?.value as? [String: Any],
                   let patient = value[id] as? [String: Any] else { return }
             completion(patient)
         })
