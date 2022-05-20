@@ -99,7 +99,7 @@ class EnterIDInterfaceController: WKInterfaceController {
                     print(error!.localizedDescription)
                     return
                 }
-                guard let value = snapshot.value as? [String: Any],
+                guard let value = snapshot?.value as? [String: Any],
                       let supervisor = value["supervisor"] as? String else {
                     self.playError()
                     return

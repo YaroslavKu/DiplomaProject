@@ -46,7 +46,6 @@
 		38518EFB2832F79C0027284A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EFA2832F79C0027284A /* NotificationController.swift */; };
 		38518EFD2832F79C0027284A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38518EFC2832F79C0027284A /* ComplicationController.swift */; };
 		38518EFF2832F79E0027284A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38518EFE2832F79E0027284A /* Assets.xcassets */; };
-		3863F420278C871F0096AA2D /* Statistic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3863F41F278C871F0096AA2D /* Statistic.storyboard */; };
 		3872EBD8282D4E8F000C6F80 /* SettinngsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBD7282D4E8F000C6F80 /* SettinngsViewController.swift */; };
 		3872EBDA282D583B000C6F80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */; };
 		3872EBE0282DAEDD000C6F80 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872EBDF282DAEDD000C6F80 /* UserData.swift */; };
@@ -173,7 +172,6 @@
 		38518EFE2832F79E0027284A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38518F002832F79E0027284A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38518F012832F79E0027284A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		3863F41F278C871F0096AA2D /* Statistic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistic.storyboard; sourceTree = "<group>"; };
 		3872EBD7282D4E8F000C6F80 /* SettinngsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettinngsViewController.swift; sourceTree = "<group>"; };
 		3872EBD9282D583B000C6F80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3872EBDF282DAEDD000C6F80 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -407,21 +405,12 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		3863F425278C89420096AA2D /* Statistic */ = {
-			isa = PBXGroup;
-			children = (
-				3863F41F278C871F0096AA2D /* Statistic.storyboard */,
-			);
-			path = Statistic;
-			sourceTree = "<group>";
-		};
 		3872EBDD282DAE93000C6F80 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				38518ED128325CBC0027284A /* PatientProfile */,
 				38518ECA283182040027284A /* AddPatient */,
 				3863F424278C89350096AA2D /* Settings */,
-				3863F425278C89420096AA2D /* Statistic */,
 				3892E27A27E8C55B0078A6AB /* Authentication */,
 				3863F422278C890B0096AA2D /* Home */,
 			);
@@ -715,7 +704,6 @@
 				3800DF112789C80400EE5C5B /* LaunchScreen.storyboard in Resources */,
 				3872EBDA282D583B000C6F80 /* GoogleService-Info.plist in Resources */,
 				38E2989227E8C61400F07E49 /* Authentication.storyboard in Resources */,
-				3863F420278C871F0096AA2D /* Statistic.storyboard in Resources */,
 				3800DF0E2789C80400EE5C5B /* Assets.xcassets in Resources */,
 				38518ED528325CF90027284A /* PatientProfile.storyboard in Resources */,
 				3800DF0C2789C80300EE5C5B /* Main.storyboard in Resources */,

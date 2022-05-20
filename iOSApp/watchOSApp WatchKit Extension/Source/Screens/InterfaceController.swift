@@ -51,7 +51,7 @@ class InterfaceController: WKInterfaceController {
                     print(error!.localizedDescription)
                     return
                 }
-                guard let value = snapshot.value as? String else { return }
+                guard let value = snapshot?.value as? String else { return }
                 self.superviserName.setText(value)
             })
             
