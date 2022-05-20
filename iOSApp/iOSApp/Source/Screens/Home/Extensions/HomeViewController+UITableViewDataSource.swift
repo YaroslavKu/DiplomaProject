@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Charts
 
+// MARK: UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -134,7 +135,32 @@ private extension HomeViewController {
         set.colors = ChartColorTemplates.vordiplom()
         let data = BarChartData(dataSet: set)
         
-        cell.configure(with: data)
+        let addAction: () -> Void = {
+            let alert = UIAlertController(title: "Add new value", message: nil, preferredStyle: .alert)
+
+            alert.addTextField { (titleTextField) in
+                titleTextField.placeholder = "Value"
+            }
+
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak alert] (_) in
+                guard let value = alert?.textFields?[0].text,
+                      let doubleValue = Double(value),
+                      let uid = UserData.shared.userUid,
+                      let patientId = self.selectedPatient?.id else { return }
+                
+                let date = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                dateFormatter.string(from: date)
+                
+                self.ref.child("users/\(uid)/patients/\(patientId)/data/\(itemKey)/")
+                    .child("\(dateFormatter.string(from: date))").setValue(doubleValue)
+            }))
+
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        cell.configure(with: data, addAction: addAction)
         
         return cell
     }

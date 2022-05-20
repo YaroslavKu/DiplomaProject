@@ -53,6 +53,12 @@ class Patient {
             self.heartRate = value
             completion()
         })
+        
+        ref.child("users/\(uid)/patients/\(id)/data").observe(.value, with: { snapshot in
+            guard let value = snapshot.value as? [String: Any] else { return }
+            self.data = value
+            completion()
+        })
     }
     
     func removeAllObservers() {

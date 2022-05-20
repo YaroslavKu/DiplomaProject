@@ -135,20 +135,29 @@ private extension HomeViewController {
     }
     
     @objc func handleFooterTap(_ sender: UIButton) {
-        //1. Create the alert controller.
         let alert = UIAlertController(title: "Add new data", message: nil, preferredStyle: .alert)
 
         alert.addTextField { (titleTextField) in
             titleTextField.placeholder = "Value name"
         }
         alert.addTextField { (initialValuetextField) in
-            initialValuetextField.placeholder = "InitialValue"
+            initialValuetextField.placeholder = "Initial Value"
         }
 
         alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak alert] (_) in
-            for i in alert!.textFields! {
-                print(i.text)
-            }
+            guard let valueKey = alert?.textFields?[0].text,
+                  let initialValue = alert?.textFields?[1].text,
+                  let uid = UserData.shared.userUid,
+                  let patientId = self.selectedPatient?.id else { return }
+            
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            dateFormatter.string(from: date)
+            
+            self.ref.child("users/\(uid)/patients/\(patientId)/data/\(valueKey)").setValue([
+                dateFormatter.string(from: date): Double(initialValue)
+            ])
         }))
 
         self.present(alert, animated: true, completion: nil)

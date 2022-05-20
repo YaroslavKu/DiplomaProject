@@ -12,7 +12,9 @@ class BarChartTableViewCell: UITableViewCell {
     static let identifier = "BarChartTableViewCell"
     
     private var barChartView: BarChartView?
+    private var addDataButton: UIButton?
     
+    private var addValuaeAction: (() -> Void)?
     private var barChartData: BarChartData? {
         didSet {
             barChartView?.data = barChartData
@@ -22,13 +24,17 @@ class BarChartTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        if barChartView == nil {
-            barChartView = BarChartView()
-            barChartView?.clipsToBounds = true
-            contentView.addSubview(barChartView!)
-        } else {
-            print("barChartView exists")
-        }
+        barChartView = BarChartView()
+        barChartView?.clipsToBounds = true
+        contentView.addSubview(barChartView!)
+        
+        var configuration = UIButton.Configuration.tinted()
+        configuration.title = "+"
+        
+        addDataButton = UIButton(configuration: configuration)
+//        addDataButton?.
+        addDataButton?.addTarget(self, action: #selector(handleAddDataTap(_:)), for: .touchUpInside)
+        contentView.addSubview(addDataButton!)
     }
     
     required init?(coder: NSCoder) {
@@ -51,6 +57,9 @@ class BarChartTableViewCell: UITableViewCell {
             barChartView?.isHidden = true
             backgroundColor = .clear
         }
+        
+        addDataButton?.frame = CGRect(x: 20, y: 25, width: 40, height: 30)
+        addDataButton?.tintColor = .white
     }
     
     override func prepareForReuse() {
@@ -65,7 +74,12 @@ class BarChartTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    public func configure(with data: BarChartData) {
+    public func configure(with data: BarChartData, addAction: (() -> Void)?) {
         barChartData = data
+        addValuaeAction = addAction
+    }
+    
+    @objc func handleAddDataTap(_ sender: UIButton) {
+        addValuaeAction?()
     }
 }
