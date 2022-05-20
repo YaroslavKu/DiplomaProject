@@ -13,6 +13,7 @@ class WatchOSDataTableViewCell: UITableViewCell {
     private var containerView = UIView()
     private var heartRateLabel: UILabel = UILabel()
     private var oxygenReateLabel: UILabel = UILabel()
+    private var stepCountLabel: UILabel = UILabel()
     
     private var heartRate: String? {
         didSet {
@@ -23,6 +24,12 @@ class WatchOSDataTableViewCell: UITableViewCell {
     private var oxygenRate: String? {
         didSet {
             oxygenReateLabel.text = oxygenRate
+        }
+    }
+    
+    private var stepCount: String? {
+        didSet {
+            stepCountLabel.text = stepCount
         }
     }
 
@@ -38,6 +45,9 @@ class WatchOSDataTableViewCell: UITableViewCell {
         oxygenReateLabel.clipsToBounds = true
         containerView.addSubview(oxygenReateLabel)
         
+        stepCountLabel.clipsToBounds = true
+        containerView.addSubview(stepCountLabel)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -50,24 +60,37 @@ class WatchOSDataTableViewCell: UITableViewCell {
         containerView.frame = CGRect(x: 5, y: 5, width: contentView.frame.width - 10, height: contentView.frame.height - 10)
         containerView.layer.cornerRadius = 20
         
-        heartRateLabel.textAlignment = .center
+//        heartRateLabel.textAlignment = .center
         heartRateLabel.textColor = .white
         heartRateLabel.font =  UIFont.boldSystemFont(ofSize: 28)
-        heartRateLabel.frame = CGRect(x: 5, y: 0, width: (containerView.frame.width / 2) - 10, height: containerView.frame.height)
+        heartRateLabel.frame = CGRect(x: 10,
+                                      y: 5,
+                                      width: (containerView.frame.width / 2) - 20,
+                                      height: (containerView.frame.height/2) - 10)
         
-        oxygenReateLabel.textAlignment = .center
+//        oxygenReateLabel.textAlignment = .center
         oxygenReateLabel.textColor = .white
         oxygenReateLabel.font =  UIFont.boldSystemFont(ofSize: 28)
-        oxygenReateLabel.frame = CGRect(x: (containerView.frame.width / 2) + 5,
-                                        y: 0,
-                                        width: (containerView.frame.width / 2) - 10,
-                                        height: containerView.frame.height)
+        oxygenReateLabel.frame = CGRect(x: (containerView.frame.width / 2) + 10,
+                                        y: 5,
+                                        width: (containerView.frame.width / 2) - 20,
+                                        height: (containerView.frame.height / 2) - 10)
+        
+//        stepCountLabel.textAlignment = .center
+        stepCountLabel.textColor = .white
+        stepCountLabel.font = UIFont.boldSystemFont(ofSize: 28)
+        stepCountLabel.frame = CGRect(x: 10,
+                                      y: (containerView.frame.height / 2),
+                                      width: containerView.frame.width - 20,
+                                      height: (containerView.frame.height / 2) - 5)
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
         heartRateLabel.text = nil
+        oxygenReateLabel.text = nil
+        stepCountLabel.text = nil
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -76,9 +99,13 @@ class WatchOSDataTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    public func configure(heartRate: String, oxygenRate: String, bgColor: UIColor) {
+    public func configure(heartRate: String,
+                          oxygenRate: String,
+                          stepCount: String,
+                          bgColor: UIColor) {
         self.heartRate = heartRate
         self.oxygenRate = oxygenRate
+        self.stepCount = stepCount
         containerView.backgroundColor = bgColor
     }
 }

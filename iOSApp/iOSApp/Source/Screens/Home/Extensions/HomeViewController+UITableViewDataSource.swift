@@ -25,7 +25,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if  indexPath.row == 0 {
-                return 70
+            return 100
         } else {
             return 200
         }
@@ -95,6 +95,14 @@ private extension HomeViewController {
             }
         }
         
+        var stepCount: String {
+            if let stepCount = selectedPatient?.stepCount {
+                return String(stepCount)
+            } else {
+                return "nil"
+            }
+        }
+        
         var saturation: String {
             guard let saturationDict = selectedPatient?.data?["saturation"]  as? [String: Double]else { return "nil" }
             
@@ -106,6 +114,7 @@ private extension HomeViewController {
         
         cell.configure(heartRate: "❤️ \(heartRate) bpm",
                        oxygenRate: "🅾️ \(saturation)%",
+                       stepCount: "👟 \(stepCount) steps",
                        bgColor: UIColor.pickColor(alphabet: selectedPatient?.name.first ?? "A"))
         
         return cell
@@ -156,6 +165,8 @@ private extension HomeViewController {
                 self.ref.child("users/\(uid)/patients/\(patientId)/data/\(itemKey)/")
                     .child("\(dateFormatter.string(from: date))").setValue(doubleValue)
             }))
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default))
 
             self.present(alert, animated: true, completion: nil)
         }

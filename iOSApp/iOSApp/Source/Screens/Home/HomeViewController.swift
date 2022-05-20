@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     var selectedPatient: Patient? {
         didSet {
             oldValue?.removeAllObservers()
-            selectedPatient?.onHeartRateDidChange {
+            selectedPatient?.onPatientDataDidChange {
                 self.tableView?.reloadData()
             }
             tableView?.reloadData()
@@ -159,6 +159,8 @@ private extension HomeViewController {
                 dateFormatter.string(from: date): Double(initialValue)
             ])
         }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default))
 
         self.present(alert, animated: true, completion: nil)
     }

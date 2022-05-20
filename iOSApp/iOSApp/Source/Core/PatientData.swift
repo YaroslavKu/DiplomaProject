@@ -20,6 +20,7 @@ class Patient {
     var description: String?
     
     var heartRate: Double?
+    var stepCount: Int?
     var data: [String: Any]?
     
     var isAppleWatchConnected: Bool?
@@ -32,6 +33,7 @@ class Patient {
         self.age = dict["age"] as? Int
         self.description = dict["description"] as? String
         self.heartRate = dict["heartRate"] as? Double
+        self.stepCount = dict["stepsCount"] as? Int
         self.data = dict["data"] as? [String: Any]
     }
     
@@ -46,11 +48,17 @@ class Patient {
         ]
     }
     
-    func onHeartRateDidChange(completion: @escaping (() -> Void)) {
+    func onPatientDataDidChange(completion: @escaping (() -> Void)) {
         guard let uid = UserData.shared.userUid else { return }
         ref.child("users/\(uid)/patients/\(id)/heartRate").observe(.value, with: { snapshot in
             guard let value = snapshot.value as? Double else { return }
             self.heartRate = value
+            completion()
+        })
+        
+        ref.child("users/\(uid)/patients/\(id)/stepsCount").observe(.value, with: { snapshot in
+            guard let value = snapshot.value as? Int else { return }
+            self.stepCount = value
             completion()
         })
         
